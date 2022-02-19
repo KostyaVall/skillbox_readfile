@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Кофе-машина - Даниил Пилипенко");
+ 
+        int moneyAmount = 120;
+ 
+        int[] drinkPrices = {200, 100, 50, 40};
+        String[] drinkNames = {"капучино", "эспрессо", "воду", "молоко"};
+ 
+        boolean canBuyAnything = false;
+ 
+        if (drinkPrices.length != drinkNames.length) {
+            System.out.println("Количество цен и имён неодинаково!");
+            System.exit(0);
+        }
+ 
+        for (int i = 0; i < drinkPrices.length; i = i + 1) {
+            if (moneyAmount >= drinkPrices[i]) {
+                System.out.println("Вы можете купить " +
+                    drinkNames[i]);
+                canBuyAnything = true;
+            }
+        }
+ 
+        if (canBuyAnything == false) {
+            System.out.println("Недостаточно средств ((");
+        }
+    }
+}
+ 
